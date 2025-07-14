@@ -20,7 +20,7 @@ const useAuthStore = create<AuthState & {
     if (email === 'test@example.com') {
       const userData = {
         user: {
-          id: 'test-user-id',
+          _id: 'test-user-id',
           email: 'test@example.com',
           username: 'Test User',
         },
