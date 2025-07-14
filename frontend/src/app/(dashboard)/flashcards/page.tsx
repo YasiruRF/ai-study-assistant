@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiPlus, FiSearch, FiFilter, FiRefreshCw, FiCheck, FiX, FiBook } from 'react-icons/fi';
 import useFlashcardStore from '@/app/hooks/useFlashcardStore';
 import useNoteStore from '@/app/hooks/useNoteStore';
 import Button from '@/app/components/ui/Button';
@@ -112,7 +111,7 @@ export default function FlashcardsPage() {
         <div className="max-w-2xl mx-auto">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-2xl font-bold text-gray-900">Study Mode</h1>
-            <Button variant="outline" size="sm" icon={<FiX />} onClick={exitStudyMode}>
+            <Button variant="outline" size="sm" onClick={exitStudyMode}>
               Exit
             </Button>
           </div>
@@ -234,14 +233,13 @@ export default function FlashcardsPage() {
             <div className="flex space-x-3">
               <Button
                 variant="outline"
-                icon={<FiRefreshCw />}
                 onClick={startStudyMode}
                 disabled={filteredFlashcards.length === 0}
               >
                 Study Mode
               </Button>
               <Link href="/flashcards/new">
-                <Button icon={<FiPlus />}>Add Flashcard</Button>
+                <Button>Add Flashcard</Button>
               </Link>
             </div>
           </div>
@@ -252,7 +250,6 @@ export default function FlashcardsPage() {
               <div className="md:col-span-2">
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <FiSearch className="text-gray-400" />
                   </div>
                   <Input
                     type="text"
@@ -266,7 +263,11 @@ export default function FlashcardsPage() {
               </div>
               
               <div>
+                <label htmlFor="subject-select" className="sr-only">
+                  Select Subject
+                </label>
                 <select
+                  id="subject-select"
                   value={selectedSubject}
                   onChange={handleSubjectChange}
                   className="block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -281,7 +282,11 @@ export default function FlashcardsPage() {
               </div>
               
               <div>
+                <label htmlFor="difficulty-select" className="sr-only">
+                  Select Difficulty
+                </label>
                 <select
+                  id="difficulty-select"
                   value={selectedDifficulty}
                   onChange={handleDifficultyChange}
                   className="block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -355,7 +360,6 @@ export default function FlashcardsPage() {
                 >
                   <div className="flex flex-col items-center justify-center h-full py-12">
                     <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-4">
-                      <FiPlus className="text-indigo-600" size={24} />
                     </div>
                     <p className="text-indigo-600 font-medium">Add New Flashcard</p>
                   </div>
@@ -366,7 +370,6 @@ export default function FlashcardsPage() {
             <Card className="border border-gray-200 bg-gray-50">
               <div className="text-center py-12">
                 <div className="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center mx-auto mb-4">
-                  
                 </div>
                 <h3 className="text-lg font-medium text-gray-900 mb-2">No flashcards found</h3>
                 <p className="text-gray-500 mb-6">
@@ -375,7 +378,7 @@ export default function FlashcardsPage() {
                     : "You don't have any flashcards yet"}
                 </p>
                 <Link href="/flashcards/new">
-                  <Button icon={<FiPlus />}>Create Your First Flashcard</Button>
+                  <Button>Create Your First Flashcard</Button>
                 </Link>
               </div>
             </Card>

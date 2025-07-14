@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FiBook, FiCpu, FiBrain, FiFileText } from 'react-icons/fi';
 import Button from '../components/ui/Button';
 
 export default function Home() {
@@ -56,11 +55,15 @@ export default function Home() {
                 <div className="flex justify-between items-center">
                   <span className="text-xs opacity-70">Last updated: 2 hours ago</span>
                   <div className="flex gap-2">
-                    <button className="p-1 rounded-full bg-white/20 hover:bg-white/30">
-                      <FiBook size={16} />
+                    <button className="p-1 rounded-full bg-white/20 hover:bg-white/30" title="Edit note" aria-label="Edit note">
+                      <svg width="20" height="20" fill="none" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M14.85 2.85a1.2 1.2 0 0 1 1.7 1.7l-9.2 9.2-2.1.4.4-2.1 9.2-9.2z" stroke="currentColor" strokeWidth="1.5" />
+                      </svg>
                     </button>
-                    <button className="p-1 rounded-full bg-white/20 hover:bg-white/30">
-                      <FiCpu size={16} />
+                    <button className="p-1 rounded-full bg-white/20 hover:bg-white/30" title="Delete note" aria-label="Delete note">
+                      <svg width="20" height="20" fill="none" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M6 6v8m4-8v8m4-10v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6m9-2H5m2-2h6a1 1 0 0 1 1 1v1H4V3a1 1 0 0 1 1-1h2z" stroke="currentColor" strokeWidth="1.5" />
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -88,7 +91,7 @@ export default function Home() {
               transition={{ duration: 0.2 }}
             >
               <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                <FiFileText className="text-indigo-600 text-xl" />
+                
               </div>
               <h3 className="text-xl font-semibold mb-2">Smart Note Organization</h3>
               <p className="text-gray-600">
@@ -103,7 +106,7 @@ export default function Home() {
               transition={{ duration: 0.2 }}
             >
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <FiCpu className="text-purple-600 text-xl" />
+                
               </div>
               <h3 className="text-xl font-semibold mb-2">AI-Powered Summaries</h3>
               <p className="text-gray-600">
@@ -118,7 +121,7 @@ export default function Home() {
               transition={{ duration: 0.2 }}
             >
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <FiBrain className="text-blue-600 text-xl" />
+                
               </div>
               <h3 className="text-xl font-semibold mb-2">Intelligent Flashcards</h3>
               <p className="text-gray-600">
