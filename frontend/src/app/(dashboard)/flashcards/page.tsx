@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiPlus, FiSearch, FiFilter, FiRefreshCw, FiCheck, FiX } from 'react-icons/fi';
+import { FiPlus, FiSearch, FiFilter, FiRefreshCw, FiCheck, FiX, FiBook } from 'react-icons/fi';
 import useFlashcardStore from '@/app/hooks/useFlashcardStore';
 import useNoteStore from '@/app/hooks/useNoteStore';
 import Button from '@/app/components/ui/Button';
