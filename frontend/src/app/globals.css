@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: #f9fafb;
+}
+
+@layer components {
+  .prose {
+    @apply text-gray-700 leading-normal;
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply text-gray-900 font-semibold my-4;
+  }
+  
+  .prose p {
+    @apply my-4;
+  }
+  
+  .prose ul, .prose ol {
+    @apply my-4 ml-6;
+  }
+  
+  .prose ul {
+    @apply list-disc;
+  }
+  
+  .prose ol {
+    @apply list-decimal;
+  }
+  
+  .prose a {
+    @apply text-indigo-600 hover:text-indigo-800;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-gray-200 pl-4 italic text-gray-600;
+  }
+  
+  .prose code {
+    @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+  }
+  
+  .prose pre {
+    @apply bg-gray-100 p-4 rounded overflow-x-auto;
+  }
+}
